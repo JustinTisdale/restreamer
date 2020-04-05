@@ -59,6 +59,14 @@ window.angular.module('StreamingInterface').controller('streamingStatusControlle
         $scope.fps = () => {
             return $scope.data.progresses ? $scope.data.progresses[$scope.name].currentFps : 0;
         };
+        
+        /**
+         * @returns {number} current viewer count
+         */
+        $scope.
+        $scope.viewerCount = () => {
+            return $scope.data.viewerCount ? $scope.data.viewerCount : 0;
+        };
 
         /**
          * @returns {number} current bit rate
