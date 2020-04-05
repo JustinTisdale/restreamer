@@ -97,6 +97,7 @@ window.angular.module('Main').controller('mainController',
                     autoplay: false,
                     mute: false,
                     statistics: false,
+                    viewerCounter: false,
                     color: '#3daa48',
                     logo: {
                         image: '',
