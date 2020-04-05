@@ -37,6 +37,12 @@
         var val = getQueryParam(key, defaultValue);
         return val === true || val === "true" || val === "1" || val === "yes" || val === "on";
     }
+    
+    function uuidv4() {
+      return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+      );
+    }
 
     function convertColorParam(parameter, defaultColor) {
         var re = new RegExp("^#([0-9a-f]{3}|[0-9a-f]{6})$");
@@ -64,9 +70,11 @@
         plugins.push(ClapprNerdStats);
         plugins.push(ClapprStats);
     }
+    
+    var playerId = uuidv4();
 
     var config = {
-        source: 'hls/live.stream.m3u8',
+        source: 'hls/live.stream.m3u8?' + playerId,
         parentId: '#player',
         baseUrl: 'libs/scripts/',
         plugins: plugins,
