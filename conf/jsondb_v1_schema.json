@@ -177,7 +177,8 @@
             "mute",
             "statistics",
             "color",
-            "logo"
+            "logo",
+            "viewerCounter"
           ],
           "properties": {
             "autoplay": {
@@ -189,6 +190,10 @@
               "default": false
             },
             "statistics": {
+              "type": "boolean",
+              "default": false
+            },
+            "viewerCounter": {
               "type": "boolean",
               "default": false
             },
