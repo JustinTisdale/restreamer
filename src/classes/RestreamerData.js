@@ -168,6 +168,7 @@ class RestreamerData {
                             autoplay: false,
                             mute: false,
                             statistics: false,
+                            viewerCount: false,
                             color: '#3daa48',
                             logo: {
                                 image: '',
