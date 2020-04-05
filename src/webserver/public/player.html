@@ -58,6 +58,11 @@
             return defaultColor;
         }
     }
+    
+    function logViewerWatching(playerId) {
+        //TODO: Write log to somewhere the admin interface can access
+        console.log('Player ' + playerId + ' is watching the stream.');
+    }
 
     var autoplay = convertBoolParam("autoplay", playerConfig.autoplay);
     var mute = convertBoolParam("mute", playerConfig.mute);
@@ -110,6 +115,13 @@
         posterPlugin.options.poster = 'images/live.jpg?t=' + String(new Date().getTime());
         posterPlugin.render();
     });
+    
+    // TODO: Check if viewerCount config setting is true
+    setTimeout(function() {
+        if(player.isPlaying()) {
+            logViewerWatching(playerId);
+        }
+    }, 10000);
 </script>
 </body>
 </html>
